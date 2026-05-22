@@ -159,11 +159,11 @@
         .footer { text-align: center; padding: 30px; margin-top: 50px; background: var(--secondary-dark); color: #aaaaaa; transition: background-color 0.3s ease;}
     </style>
 </head>
-<body>
+<body class="dark-mode">
 
 <header>
     <button id="themeToggle" class="theme-toggle">
-        <span id="themeIcon">🌙</span> <span id="themeText">Karanlık Mod</span>
+        <span id="themeIcon">☀️</span> <span id="themeText">Aydınlık Mod</span>
     </button>
     <h1>Diyalektik Okuma Rehberi</h1>
     <p>Kapitalizm, Sosyalizm ve Ötesi - Eksiksiz Külliyat</p>
@@ -559,10 +559,11 @@
     // Tarayıcı hafızasını (localStorage) kontrol et
     const currentTheme = localStorage.getItem('theme');
     
-    if (currentTheme === 'dark') {
-        body.classList.add('dark-mode');
-        themeIcon.textContent = '☀️';
-        themeText.textContent = 'Aydınlık Mod';
+    // Artık varsayılan karanlık olduğu için, sadece 'light' kaydedilmişse aydınlığa çeviriyoruz
+    if (currentTheme === 'light') {
+        body.classList.remove('dark-mode');
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Karanlık Mod';
     }
 
     // Butona tıklama olayı
