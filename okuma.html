@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diyalektik Okuma Rehberi: Kapitalizm, Sosyalizm ve Ötesi</title>
+    <style>
+        /* Renk Değişkenleri (Aydınlık Mod - Varsayılan) */
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --primary-red: #c62828;
+            --secondary-dark: #212121;
+            --img-container-bg: #eaeaea;
+            --border-color: #dddddd;
+            --alt-text-color: #666666;
+            --desc-text-color: #444444;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --book-shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Renk Değişkenleri (Karanlık Mod) */
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --primary-red: #ef5350; /* Karanlık modda göz yormayan daha açık bir kırmızı */
+            --secondary-dark: #000000;
+            --img-container-bg: #2c2c2c;
+            --border-color: #333333;
+            --alt-text-color: #aaaaaa;
+            --desc-text-color: #bbbbbb;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --book-shadow: rgba(0, 0, 0, 0.6);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-color: var(--secondary-dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-red);
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
+        header p { font-size: 1.2em; color: #cccccc; margin-top: 10px; }
+        
+        /* Tema Değiştirme Butonu */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .theme-toggle {
+                position: static;
+                display: inline-block;
+                margin-top: 20px;
+            }
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        .phase-title {
+            color: var(--primary-red);
+            border-bottom: 2px solid var(--primary-red);
+            padding-bottom: 10px;
+            margin-top: 50px;
+            font-size: 2em;
+            transition: color 0.3s ease;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+        }
+        
+        .card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px var(--shadow-color); }
+        
+        /* Resim Alanı Düzeltmeleri */
+        .card-img-container {
+            width: 100%;
+            height: 400px;
+            background-color: var(--img-container-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px; /* Kitabın etrafında boşluk yaratır */
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+        
+        .card-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Kesilmeyi önler, resmi sığdırır */
+            box-shadow: 0 5px 15px var(--book-shadow); /* Kitaba 3 boyutlu bir gölge verir */
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover .card-img-container img {
+            transform: scale(1.03); /* Üzerine gelince kitap hafifçe büyür */
+        }
+        
+        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column;}
+        .book-title { font-size: 1.4em; color: var(--text-color); margin: 0 0 10px 0; transition: color 0.3s ease;}
+        .book-alt-title { font-size: 0.9em; color: var(--alt-text-color); font-style: italic; margin-bottom: 15px; display: block; transition: color 0.3s ease;}
+        
+        .meta-list { list-style: none; padding: 0; margin: 0 0 15px 0; font-size: 0.95em; flex-grow: 1;}
+        .meta-list li { margin-bottom: 8px; }
+        .meta-list strong { color: var(--text-color); transition: color 0.3s ease;}
+        
+        .desc { font-size: 0.95em; color: var(--desc-text-color); border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: auto; transition: color 0.3s ease, border-color 0.3s ease;}
+        
+        .footer { text-align: center; padding: 30px; margin-top: 50px; background: var(--secondary-dark); color: #aaaaaa; transition: background-color 0.3s ease;}
+    </style>
+</head>
+<body>
+
+<header>
+    <button id="themeToggle" class="theme-toggle">
+        <span id="themeIcon">🌙</span> <span id="themeText">Karanlık Mod</span>
+    </button>
+    <h1>Diyalektik Okuma Rehberi</h1>
+    <p>Kapitalizm, Sosyalizm ve Ötesi - Eksiksiz Külliyat</p>
+</header>
+
+<div class="container">
+
+    <h2 class="phase-title">Faz 1: Sistemi Kurmak, Sömürü ve Edebi Yansıma</h2>
+    <div class="grid">
+        
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/1.jpg" alt="The Wealth of Nations (Books I-III)">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">The Wealth of Nations (Books I-III)</h3>
+                <span class="book-alt-title">Türkçe Adı: Ulusların Zenginliği (1. Cilt)</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Adam Smith</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1776 / ~540</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> 18. yüzyıl İngilizcesi. Dili oldukça arkaik ve cümleleri uzundur. Sabırlı okuma gerektirir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Penguin Classics (Volume 1)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin, serbest piyasanın ve işbölümünün temel metni. Marx'ın itiraz edeceği ekonomik sistemi kuran kısımdır.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/2.jpg" alt="The Wealth of Nations (Books IV-V)">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">The Wealth of Nations (Books IV-V)</h3>
+                <span class="book-alt-title">Türkçe Adı: Ulusların Zenginliği (2. Cilt)</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Adam Smith</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1776 / ~640</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> İlk ciltle aynı arkaik yapıdadır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Penguin Classics (Volume 2)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Devletin ekonomideki rolünü (eğitim, kamu altyapısı) ve dönemin tekel eleştirisini ekler. Kapitalist devletin orijinalde nasıl tasarlandığını gösterir.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/3.jpg" alt="Caliban and the Witch">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Caliban and the Witch</h3>
+                <span class="book-alt-title">Türkçe Adı: Caliban ve Cadı</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Silvia Federici</li>
+                    <li><strong>Yıl / Sayfa:</strong> 2004 / ~288</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> Akademik ama son derece akıcı ve anlaşılır bir modern İngilizce. Roman gibi akar.</li>
+                    <li><strong>Önerilen Baskı:</strong> Penguin Modern Classics / Autonomedia</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin ilk aşamasında kadın emeğine ve bedenine nasıl el konulduğunu anlatarak "yeniden üretim" perspektifini tamamlar.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/4.jpg" alt="The ABC of Socialism">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">The ABC of Socialism</h3>
+                <span class="book-alt-title">Türkçe Adı: Sosyalizmin Alfabesi</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Leo Huberman</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1953 / ~130</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> Dili halk için yazıldığından muazzam derecede basittir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Monthly Review Press (İng) / Yordam Kitap (Tr)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Marksist ekonomi politiğin dünyadaki en anlaşılır giriş kitabıdır. Kavramları netleştirir.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/5.jpg" alt="Wage Labour and Capital">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Wage Labour and Capital</h3>
+                <span class="book-alt-title">Orijinal Adı: Lohnarbeit und Kapital</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Karl Marx</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1847 / ~50</li>
+                    <li><strong>Orijinal Dil:</strong> Almanca</li>
+                    <li><strong>Dil / Çeviri:</strong> Marksist terminoloji oturduğu için İngilizce çevirisi son derece pürüzsüz ve nettir.</li>
+                    <li><strong>Önerilen Baskı:</strong> International Publishers / Penguin Classics</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Marx'ın, "sömürü" kavramının ekonomik temelini Kapital okumadan anlatma biçimidir.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/6.jpg" alt="Germinal">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Germinal</h3>
+                <span class="book-alt-title">Türkçe Adı: Germinal</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Émile Zola</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1885 / ~540</li>
+                    <li><strong>Orijinal Dil:</strong> Fransızca</li>
+                    <li><strong>Dil / Çeviri:</strong> İngilizce çevirileri akıcıdır. Natüralist tasvirler içerir ama son derece sürükleyicidir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Oxford World's Classics (İng) / İş Bankası (Tr)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Marx'ın anlattığı sömürü kavramının edebiyattaki en büyük karşılığı. Maden işçilerinin sefaletini ve direnişini hissettirir.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/7.jpg" alt="The Communist Manifesto">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">The Communist Manifesto</h3>
+                <span class="book-alt-title">Orijinal Adı: Manifest der Kommunistischen Partei</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Karl Marx & Friedrich Engels</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1848 / ~50</li>
+                    <li><strong>Orijinal Dil:</strong> Almanca</li>
+                    <li><strong>Dil / Çeviri:</strong> Samuel Moore'un İngilizce çevirisi edebi bir klasik kabul edilir; şiirsel ve vurucudur.</li>
+                    <li><strong>Önerilen Baskı:</strong> Verso Books / Penguin Classics</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Sınıf mücadelesinin ve komünist hedeflerin siyasi deklarasyonu.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/8.jpg" alt="Imperialism, the Highest Stage of Capitalism">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Imperialism</h3>
+                <span class="book-alt-title">Türkçe Adı: Emperyalizm, Kapitalizmin En Yüksek Aşaması</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> V.I. Lenin</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1916 / ~150</li>
+                    <li><strong>Orijinal Dil:</strong> Rusça</li>
+                    <li><strong>Dil / Çeviri:</strong> Çevirisi çok işlevseldir, edebi süslemeler barındırmaz, okuması oldukça rahattır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Pluto Press / Penguin Classics</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Serbest rekabetin nasıl bitip dev tekellere dönüştüğünü gösterir. I. Dünya Savaşı'nın Marksist açıklamasıdır.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/9.jpg" alt="The Iron Heel">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">The Iron Heel</h3>
+                <span class="book-alt-title">Türkçe Adı: Demir Ökçe</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Jack London</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1908 / ~280</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> El yazması formatında yazıldığı için son derece sürükleyici ve aksiyon doludur.</li>
+                    <li><strong>Önerilen Baskı:</strong> Penguin Classics (İng) / İş Bankası (Tr)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Tekelci kapitalizmin siyasi olarak faşist bir oligarşiye dönüşmesini öngören muazzam bir distopik kurgudur.</div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="phase-title">Faz 2: Devrim ve Devletin Dönüşümü</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/10.jpg" alt="The State and Revolution">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">The State and Revolution</h3>
+                <span class="book-alt-title">Türkçe Adı: Devlet ve Devrim</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> V.I. Lenin</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1917 / ~130</li>
+                    <li><strong>Orijinal Dil:</strong> Rusça</li>
+                    <li><strong>Dil / Çeviri:</strong> Polemikçi bir dili vardır. İngilizce çevirisi kolay ve rahattır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Haymarket Books (Açıklamalı)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Burjuva devletin neden parçalanıp yerine ne konması gerektiğini ve devletin sönümlenmesini tartışır.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/11.jpg" alt="On Practice and Contradiction">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">On Practice and Contradiction</h3>
+                <span class="book-alt-title">Türkçe Adı: Pratik ve Çelişki Üzerine</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Mao Zedong</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1937 / ~145</li>
+                    <li><strong>Orijinal Dil:</strong> Çince</li>
+                    <li><strong>Dil / Çeviri:</strong> Sistematik, hafif didaktik ama anlaşılması çok kolay bir İngilizcesi vardır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Verso Books (Žižek önsözüyle)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Marksizm-Leninizm'in Batı'dan çıkıp köylü toplumuna nasıl uyarlandığını gösteren felsefi temeldir.</div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="phase-title">Faz 3: Türkiye Özelinde Sol ve Toplumsal Yapı</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/12.jpg" alt="Türkiye'de Sol Akımlar (1908-1925)">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Türkiye'de Sol Akımlar (1908-1925)</h3>
+                <span class="book-alt-title">Orijinal Dil: Türkçe</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Mete Tunçay</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1967 / ~530</li>
+                    <li><strong>Orijinal Dil:</strong> Türkçe</li>
+                    <li><strong>Dil Zorluğu:</strong> Akademik bir dili vardır, çok temiz bir Türkçedir.</li>
+                    <li><strong>Önerilen Baskı:</strong> İletişim Yayınları</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Türkiye'de solun köklerini, ilk komünist örgütlenmeleri nesnel bir tarihçiden öğrenmek için.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/13.jpg" alt="Türkiye'nin Düzeni">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Türkiye'nin Düzeni</h3>
+                <span class="book-alt-title">Orijinal Dil: Türkçe</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Doğan Avcıoğlu</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1968 / ~750</li>
+                    <li><strong>Orijinal Dil:</strong> Türkçe</li>
+                    <li><strong>Dil Zorluğu:</strong> Belge ve veri odaklı, gazeteci kökenli bir yazar olduğu için sürükleyicidir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Kırmızı Kedi / Tekin Yayınevi</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Türkiye'nin neden Batı gibi gelişemediğini anlatan 1960'lar solunun ülkeyi okuma biçimidir.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/14.jpg" alt="Türkiye İktisat Tarihi (1908-2015)">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Türkiye İktisat Tarihi</h3>
+                <span class="book-alt-title">Orijinal Dil: Türkçe</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Korkut Boratav</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1988 / ~400</li>
+                    <li><strong>Orijinal Dil:</strong> Türkçe</li>
+                    <li><strong>Dil Zorluğu:</strong> İçinde iktisadi veriler olsa da metni çok duru ve nettir.</li>
+                    <li><strong>Önerilen Baskı:</strong> İmge Kitabevi</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Türkiye'nin sermaye birikimini ve sınıf yapılarını katıksız bir Marksist iktisat penceresinden anlatan ana kaynaktır.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/15.jpg" alt="Türkiye ve Sosyalizm Sorunları">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Türkiye ve Sosyalizm Sorunları</h3>
+                <span class="book-alt-title">Orijinal Dil: Türkçe</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Behice Boran</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1968 / ~320</li>
+                    <li><strong>Orijinal Dil:</strong> Türkçe</li>
+                    <li><strong>Dil Zorluğu:</strong> Sosyolog kalemiyle analitik, duygusallıktan uzak ve keskin bir dili vardır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Yordam Kitap</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Türkiye'nin koşullarında bilimsel sosyalizmin nasıl örgütlenmesi gerektiğine dair yetkin metindir.</div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="phase-title">Faz 4: Hegemonya, Geç Kapitalizm ve Çıkışsızlık</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/16.jpg" alt="Selections from the Prison Notebooks">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Selections from the Prison Notebooks</h3>
+                <span class="book-alt-title">Türkçe Adı: Hapishane Defterleri</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Antonio Gramsci</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1929-1935 / ~580</li>
+                    <li><strong>Orijinal Dil:</strong> İtalyanca</li>
+                    <li><strong>Dil / Çeviri:</strong> Şifreli bir dille yazıldığı için okunması en zor metinlerden biridir. Dipnotlar hayatidir.</li>
+                    <li><strong>Önerilen Baskı:</strong> International Publishers (Q. Hoare çevirisi)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin sadece orduyla değil, okullar ve medya ile rıza ("Hegemonya") ürettiğini açıklar.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/17.jpg" alt="Listen, Little Man!">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Listen, Little Man!</h3>
+                <span class="book-alt-title">Türkçe Adı: Dinle Küçük Adam</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Wilhelm Reich</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1948 / ~120</li>
+                    <li><strong>Orijinal Dil:</strong> Almanca</li>
+                    <li><strong>Dil / Çeviri:</strong> Bilimsel bir tez değil, iç dökmedir. İnanılmaz duygusal, akıcı ve sarsıcıdır.</li>
+                    <li><strong>Önerilen Baskı:</strong> FSG (İng) / Payel Yayınları (Tr)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Sıradan insanın neden kendisini ezen otoriteye aşık olduğunu açıklar. Hegemonyanın psikolojik yüzüdür.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/18.jpg" alt="A Brief History of Neoliberalism">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">A Brief History of Neoliberalism</h3>
+                <span class="book-alt-title">Türkçe Adı: Neoliberalizmin Kısa Tarihi</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> David Harvey</li>
+                    <li><strong>Yıl / Sayfa:</strong> 2005 / ~250</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> Modern ve analitik bir İngilizcesi vardır. B2 seviyesi ile oldukça rahat okunur.</li>
+                    <li><strong>Önerilen Baskı:</strong> Oxford University Press</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin 1980'lerden itibaren devleti ve toplumu nasıl yeniden dizayn ettiğini anlatır.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/19.jpg" alt="Capitalist Realism">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Capitalist Realism: Is There No Alternative?</h3>
+                <span class="book-alt-title">Türkçe Adı: Kapitalist Gerçekçilik</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Mark Fisher</li>
+                    <li><strong>Yıl / Sayfa:</strong> 2009 / ~85</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> Kültürel teori ve pop-kültür harmanlandığı için kendine has jargonu vardır. Dili yoğundur.</li>
+                    <li><strong>Önerilen Baskı:</strong> Zero Books / Repeater Books</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Sistemin çöküşünü hayal etmenin kapitalizmin sonunu hayal etmekten neden daha kolay olduğunu sorgular.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/20.jpg" alt="Postcapitalist Desire">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Postcapitalist Desire</h3>
+                <span class="book-alt-title">Türkçe Adı: Postkapitalist Arzu</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Mark Fisher</li>
+                    <li><strong>Yıl / Sayfa:</strong> 2020 / ~270</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> Üniversite ders ses kayıtları olduğu için inanılmaz rahat, günlük ve akıcıdır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Repeater Books</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Yeni bir sol tahayyülün ve post-kapitalist bir geleceğin nasıl inşa edilebileceğini arar.</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>Bu liste kronolojik değil, diyalektik bir kurguyla hazırlanmıştır.</p>
+</div>
+
+<script>
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    const body = document.body;
+
+    // Tarayıcı hafızasını (localStorage) kontrol et
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Aydınlık Mod';
+    }
+
+    // Butona tıklama olayı
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+            themeIcon.textContent = '☀️';
+            themeText.textContent = 'Aydınlık Mod';
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeIcon.textContent = '🌙';
+            themeText.textContent = 'Karanlık Mod';
+        }
+    });
+</script>
+
+</body>
+</html>
