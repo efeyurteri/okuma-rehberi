@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diyalektik Okuma Rehberi: Kapitalizm, Sosyalizm ve Ötesi</title>
     <style>
-        /* Renk Değişkenleri (Aydınlık Mod - Varsayılan) */
         :root {
             --bg-color: #f4f4f9;
             --text-color: #333333;
@@ -20,12 +19,11 @@
             --book-shadow: rgba(0, 0, 0, 0.3);
         }
 
-        /* Renk Değişkenleri (Karanlık Mod) */
         body.dark-mode {
             --bg-color: #121212;
             --text-color: #e0e0e0;
             --card-bg: #1e1e1e;
-            --primary-red: #ef5350; /* Karanlık modda göz yormayan daha açık bir kırmızı */
+            --primary-red: #ef5350; 
             --secondary-dark: #000000;
             --img-container-bg: #2c2c2c;
             --border-color: #333333;
@@ -58,7 +56,6 @@
         header h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
         header p { font-size: 1.2em; color: #cccccc; margin-top: 10px; }
         
-        /* Tema Değiştirme Butonu */
         .theme-toggle {
             position: absolute;
             top: 20px;
@@ -120,7 +117,6 @@
         
         .card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px var(--shadow-color); }
         
-        /* Resim Alanı Düzeltmeleri */
         .card-img-container {
             width: 100%;
             height: 400px;
@@ -129,7 +125,7 @@
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid var(--border-color);
-            padding: 20px; /* Kitabın etrafında boşluk yaratır */
+            padding: 20px; 
             box-sizing: border-box;
             transition: background-color 0.3s ease;
         }
@@ -137,13 +133,13 @@
         .card-img-container img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Kesilmeyi önler, resmi sığdırır */
-            box-shadow: 0 5px 15px var(--book-shadow); /* Kitaba 3 boyutlu bir gölge verir */
+            object-fit: contain; 
+            box-shadow: 0 5px 15px var(--book-shadow); 
             transition: transform 0.3s ease;
         }
         
         .card:hover .card-img-container img {
-            transform: scale(1.03); /* Üzerine gelince kitap hafifçe büyür */
+            transform: scale(1.03); 
         }
         
         .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column;}
@@ -166,14 +162,32 @@
         <span id="themeIcon">☀️</span> <span id="themeText">Aydınlık Mod</span>
     </button>
     <h1>Diyalektik Okuma Rehberi</h1>
-    <p>Kapitalizm, Sosyalizm ve Ötesi - Eksiksiz Külliyat</p>
+    <p>Kapitalizm, Sosyalizm ve Ötesi - Balyoz Külliyatı</p>
 </header>
 
 <div class="container">
 
-    <h2 class="phase-title">Faz 1: Sistemi Kurmak, Sömürü ve Edebi Yansıma</h2>
+    <h2 class="phase-title">Faz 1: Felsefe, Ekonomi Politik ve Edebi Yansıma</h2>
     <div class="grid">
         
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/21.jpg" alt="Reason and Revolution">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Reason and Revolution</h3>
+                <span class="book-alt-title">Türkçe Adı: Akıl ve Devrim</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Herbert Marcuse</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1941 / ~400</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> Yoğun felsefi dili vardır ancak Hegel'in kendi metinlerinden çok daha anlaşılırdır.</li>
+                    <li><strong>Önerilen Baskı:</strong> İthaki Yayınları (Tr) / Oxford Univ. Press (İng)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Hegel'in karmaşık diyalektiğinin, Marx'ın devrimci toplumsal teorisine nasıl zemin hazırladığını anlatan muazzam bir köprü metindir.</div>
+            </div>
+        </div>
+
         <div class="card">
             <div class="card-img-container">
                 <img src="kapaklar/1.jpg" alt="The Wealth of Nations (Books I-III)">
@@ -185,10 +199,10 @@
                     <li><strong>Yazar:</strong> Adam Smith</li>
                     <li><strong>Yıl / Sayfa:</strong> 1776 / ~540</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
-                    <li><strong>Dil / Çeviri:</strong> 18. yüzyıl İngilizcesi. Dili oldukça arkaik ve cümleleri uzundur. Sabırlı okuma gerektirir.</li>
-                    <li><strong>Önerilen Baskı:</strong> Penguin Classics (Volume 1)</li>
+                    <li><strong>Dil / Çeviri:</strong> 18. yüzyıl İngilizcesi. Arkaik bir dildir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Islık Yayınları (Tr) / Penguin Classics (İng)</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin, serbest piyasanın ve işbölümünün temel metni. Marx'ın itiraz edeceği ekonomik sistemi kuran kısımdır.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin ve işbölümünün temel metni. Marx'ın itiraz edeceği ekonomik sistemi kuran kısımdır.</div>
             </div>
         </div>
 
@@ -198,18 +212,18 @@
             </div>
             <div class="card-content">
                 <h3 class="book-title">The Wealth of Nations (Books IV-V)</h3>
-                <span class="book-alt-title">Türkçe Adı: Ulusların Zenginliği (2. Cilt)</span>
+                <span class="book-alt-title">Türkçe Adı: Ulusların Zenginliği (2. ve 3. Cilt)</span>
                 <ul class="meta-list">
                     <li><strong>Yazar:</strong> Adam Smith</li>
                     <li><strong>Yıl / Sayfa:</strong> 1776 / ~640</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
                     <li><strong>Dil / Çeviri:</strong> İlk ciltle aynı arkaik yapıdadır.</li>
-                    <li><strong>Önerilen Baskı:</strong> Penguin Classics (Volume 2)</li>
+                    <li><strong>Önerilen Baskı:</strong> Islık Yayınları (Tr) / Penguin Classics (İng)</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Devletin ekonomideki rolünü (eğitim, kamu altyapısı) ve dönemin tekel eleştirisini ekler. Kapitalist devletin orijinalde nasıl tasarlandığını gösterir.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Devletin ekonomideki rolünü ve sömürgecilik eleştirisini ekler. Referans olarak kütüphanede bulunmalıdır.</div>
             </div>
         </div>
-
+        
         <div class="card">
             <div class="card-img-container">
                 <img src="kapaklar/3.jpg" alt="Caliban and the Witch">
@@ -221,10 +235,10 @@
                     <li><strong>Yazar:</strong> Silvia Federici</li>
                     <li><strong>Yıl / Sayfa:</strong> 2004 / ~288</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
-                    <li><strong>Dil / Çeviri:</strong> Akademik ama son derece akıcı ve anlaşılır bir modern İngilizce. Roman gibi akar.</li>
-                    <li><strong>Önerilen Baskı:</strong> Penguin Modern Classics / Autonomedia</li>
+                    <li><strong>Dil / Çeviri:</strong> Modern İngilizce. Roman gibi akar.</li>
+                    <li><strong>Önerilen Baskı:</strong> Otonom (Tr) / Penguin Modern (İng)</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin ilk aşamasında kadın emeğine ve bedenine nasıl el konulduğunu anlatarak "yeniden üretim" perspektifini tamamlar.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin ilk aşamasında kadın emeğine nasıl el konulduğunu anlatarak "yeniden üretim"amp; perspektifini tamamlar.</div>
             </div>
         </div>
 
@@ -239,8 +253,8 @@
                     <li><strong>Yazar:</strong> Leo Huberman</li>
                     <li><strong>Yıl / Sayfa:</strong> 1953 / ~130</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
-                    <li><strong>Dil / Çeviri:</strong> Dili halk için yazıldığından muazzam derecede basittir.</li>
-                    <li><strong>Önerilen Baskı:</strong> Monthly Review Press (İng) / Yordam Kitap (Tr)</li>
+                    <li><strong>Dil / Çeviri:</strong> Muazzam derecede basittir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Yordam Kitap (Tr)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Marksist ekonomi politiğin dünyadaki en anlaşılır giriş kitabıdır. Kavramları netleştirir.</div>
             </div>
@@ -252,15 +266,33 @@
             </div>
             <div class="card-content">
                 <h3 class="book-title">Wage Labour and Capital</h3>
-                <span class="book-alt-title">Orijinal Adı: Lohnarbeit und Kapital</span>
+                <span class="book-alt-title">Türkçe Adı: Ücretli Emek ve Sermaye</span>
                 <ul class="meta-list">
                     <li><strong>Yazar:</strong> Karl Marx</li>
                     <li><strong>Yıl / Sayfa:</strong> 1847 / ~50</li>
                     <li><strong>Orijinal Dil:</strong> Almanca</li>
-                    <li><strong>Dil / Çeviri:</strong> Marksist terminoloji oturduğu için İngilizce çevirisi son derece pürüzsüz ve nettir.</li>
-                    <li><strong>Önerilen Baskı:</strong> International Publishers / Penguin Classics</li>
+                    <li><strong>Dil / Çeviri:</strong> Çevirisi son derece pürüzsüz ve nettir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Sol Yayınları (Tr) / Penguin (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Marx'ın, "sömürü" kavramının ekonomik temelini Kapital okumadan anlatma biçimidir.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/22.jpg" alt="Capital (Volume 1)">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Capital (Volume 1)</h3>
+                <span class="book-alt-title">Türkçe Adı: Kapital (1. Cilt)</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Karl Marx</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1867 / ~1000</li>
+                    <li><strong>Orijinal Dil:</strong> Almanca</li>
+                    <li><strong>Dil / Çeviri:</strong> Dil ve ekonomi teorisi yoğundur. Özellikle ilk 3 bölüm sabır ister.</li>
+                    <li><strong>Önerilen Baskı:</strong> Yordam Kitap (Nail Satlıgan çevirisi)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalist üretim tarzının, artı-değer sömürüsünün ve sistemin içsel çelişkilerinin anatomisini çıkaran, ekonomi-politik zirvesidir.</div>
             </div>
         </div>
 
@@ -275,10 +307,10 @@
                     <li><strong>Yazar:</strong> Émile Zola</li>
                     <li><strong>Yıl / Sayfa:</strong> 1885 / ~540</li>
                     <li><strong>Orijinal Dil:</strong> Fransızca</li>
-                    <li><strong>Dil / Çeviri:</strong> İngilizce çevirileri akıcıdır. Natüralist tasvirler içerir ama son derece sürükleyicidir.</li>
-                    <li><strong>Önerilen Baskı:</strong> Oxford World's Classics (İng) / İş Bankası (Tr)</li>
+                    <li><strong>Dil / Çeviri:</strong> Natüralist tasvirler içerir ama son derece sürükleyicidir.</li>
+                    <li><strong>Önerilen Baskı:</strong> İş Bankası Kültür Yayınları (Tr)</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Marx'ın anlattığı sömürü kavramının edebiyattaki en büyük karşılığı. Maden işçilerinin sefaletini ve direnişini hissettirir.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Sömürü kavramının edebiyattaki en büyük karşılığı. Maden işçilerinin sefaletini ve direnişini hissettirir.</div>
             </div>
         </div>
 
@@ -288,13 +320,13 @@
             </div>
             <div class="card-content">
                 <h3 class="book-title">The Communist Manifesto</h3>
-                <span class="book-alt-title">Orijinal Adı: Manifest der Kommunistischen Partei</span>
+                <span class="book-alt-title">Türkçe Adı: Komünist Manifesto</span>
                 <ul class="meta-list">
                     <li><strong>Yazar:</strong> Karl Marx & Friedrich Engels</li>
                     <li><strong>Yıl / Sayfa:</strong> 1848 / ~50</li>
                     <li><strong>Orijinal Dil:</strong> Almanca</li>
-                    <li><strong>Dil / Çeviri:</strong> Samuel Moore'un İngilizce çevirisi edebi bir klasik kabul edilir; şiirsel ve vurucudur.</li>
-                    <li><strong>Önerilen Baskı:</strong> Verso Books / Penguin Classics</li>
+                    <li><strong>Dil / Çeviri:</strong> Şiirsel ve vurucudur.</li>
+                    <li><strong>Önerilen Baskı:</strong> Yordam Kitap (Tr) / Verso (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sınıf mücadelesinin ve komünist hedeflerin siyasi deklarasyonu.</div>
             </div>
@@ -302,7 +334,7 @@
 
         <div class="card">
             <div class="card-img-container">
-                <img src="kapaklar/8.jpg" alt="Imperialism, the Highest Stage of Capitalism">
+                <img src="kapaklar/8.jpg" alt="Imperialism">
             </div>
             <div class="card-content">
                 <h3 class="book-title">Imperialism</h3>
@@ -311,10 +343,10 @@
                     <li><strong>Yazar:</strong> V.I. Lenin</li>
                     <li><strong>Yıl / Sayfa:</strong> 1916 / ~150</li>
                     <li><strong>Orijinal Dil:</strong> Rusça</li>
-                    <li><strong>Dil / Çeviri:</strong> Çevirisi çok işlevseldir, edebi süslemeler barındırmaz, okuması oldukça rahattır.</li>
-                    <li><strong>Önerilen Baskı:</strong> Pluto Press / Penguin Classics</li>
+                    <li><strong>Dil / Çeviri:</strong> Edebi süslemeler barındırmaz, rahattır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Agora Kitaplığı (Tr) / Pluto (İng)</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Serbest rekabetin nasıl bitip dev tekellere dönüştüğünü gösterir. I. Dünya Savaşı'nın Marksist açıklamasıdır.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Serbest rekabetin dev tekellere dönüştüğünü gösterir. I. Dünya Savaşı'nın Marksist açıklamasıdır.</div>
             </div>
         </div>
 
@@ -329,10 +361,10 @@
                     <li><strong>Yazar:</strong> Jack London</li>
                     <li><strong>Yıl / Sayfa:</strong> 1908 / ~280</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
-                    <li><strong>Dil / Çeviri:</strong> El yazması formatında yazıldığı için son derece sürükleyici ve aksiyon doludur.</li>
-                    <li><strong>Önerilen Baskı:</strong> Penguin Classics (İng) / İş Bankası (Tr)</li>
+                    <li><strong>Dil / Çeviri:</strong> Sürükleyici ve aksiyon doludur.</li>
+                    <li><strong>Önerilen Baskı:</strong> İş Bankası Kültür Yayınları (Tr)</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Tekelci kapitalizmin siyasi olarak faşist bir oligarşiye dönüşmesini öngören muazzam bir distopik kurgudur.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Tekelci kapitalizmin siyasi olarak faşist bir oligarşiye dönüşmesini öngören distopik kurgudur.</div>
             </div>
         </div>
     </div>
@@ -350,8 +382,8 @@
                     <li><strong>Yazar:</strong> V.I. Lenin</li>
                     <li><strong>Yıl / Sayfa:</strong> 1917 / ~130</li>
                     <li><strong>Orijinal Dil:</strong> Rusça</li>
-                    <li><strong>Dil / Çeviri:</strong> Polemikçi bir dili vardır. İngilizce çevirisi kolay ve rahattır.</li>
-                    <li><strong>Önerilen Baskı:</strong> Haymarket Books (Açıklamalı)</li>
+                    <li><strong>Dil / Çeviri:</strong> Polemikçi bir dili vardır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Yordam Kitap (Tr) / Haymarket (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Burjuva devletin neden parçalanıp yerine ne konması gerektiğini ve devletin sönümlenmesini tartışır.</div>
             </div>
@@ -368,8 +400,8 @@
                     <li><strong>Yazar:</strong> Mao Zedong</li>
                     <li><strong>Yıl / Sayfa:</strong> 1937 / ~145</li>
                     <li><strong>Orijinal Dil:</strong> Çince</li>
-                    <li><strong>Dil / Çeviri:</strong> Sistematik, hafif didaktik ama anlaşılması çok kolay bir İngilizcesi vardır.</li>
-                    <li><strong>Önerilen Baskı:</strong> Verso Books (Žižek önsözüyle)</li>
+                    <li><strong>Dil / Çeviri:</strong> Sistematik ve didaktiktir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Verso Books (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Marksizm-Leninizm'in Batı'dan çıkıp köylü toplumuna nasıl uyarlandığını gösteren felsefi temeldir.</div>
             </div>
@@ -380,43 +412,25 @@
     <div class="grid">
         <div class="card">
             <div class="card-img-container">
-                <img src="kapaklar/12.jpg" alt="Türkiye'de Sol Akımlar (1908-1925)">
+                <img src="kapaklar/30.jpg" alt="Türkiye Solu (1960-1980)">
             </div>
             <div class="card-content">
-                <h3 class="book-title">Türkiye'de Sol Akımlar (1908-1925)</h3>
+                <h3 class="book-title">Türkiye Solu (1960-1980)</h3>
                 <span class="book-alt-title">Orijinal Dil: Türkçe</span>
                 <ul class="meta-list">
-                    <li><strong>Yazar:</strong> Mete Tunçay</li>
-                    <li><strong>Yıl / Sayfa:</strong> 1967 / ~530</li>
+                    <li><strong>Yazar:</strong> Ergun Aydınoğlu</li>
+                    <li><strong>Yıl / Sayfa:</strong> 2002 / ~400</li>
                     <li><strong>Orijinal Dil:</strong> Türkçe</li>
-                    <li><strong>Dil Zorluğu:</strong> Akademik bir dili vardır, çok temiz bir Türkçedir.</li>
+                    <li><strong>Dil Zorluğu:</strong> Siyasi analiz dili akıcıdır. Teorik ayrışmaları sürükleyici özetler.</li>
                     <li><strong>Önerilen Baskı:</strong> İletişim Yayınları</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Türkiye'de solun köklerini, ilk komünist örgütlenmeleri nesnel bir tarihçiden öğrenmek için.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Türkiye solunun sokağa indiği, kitleselleştiği ve teorik tartışmalarını yaşadığı dönemi kapsar.</div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-img-container">
-                <img src="kapaklar/13.jpg" alt="Türkiye'nin Düzeni">
-            </div>
-            <div class="card-content">
-                <h3 class="book-title">Türkiye'nin Düzeni</h3>
-                <span class="book-alt-title">Orijinal Dil: Türkçe</span>
-                <ul class="meta-list">
-                    <li><strong>Yazar:</strong> Doğan Avcıoğlu</li>
-                    <li><strong>Yıl / Sayfa:</strong> 1968 / ~750</li>
-                    <li><strong>Orijinal Dil:</strong> Türkçe</li>
-                    <li><strong>Dil Zorluğu:</strong> Belge ve veri odaklı, gazeteci kökenli bir yazar olduğu için sürükleyicidir.</li>
-                    <li><strong>Önerilen Baskı:</strong> Kırmızı Kedi / Tekin Yayınevi</li>
-                </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Türkiye'nin neden Batı gibi gelişemediğini anlatan 1960'lar solunun ülkeyi okuma biçimidir.</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-img-container">
-                <img src="kapaklar/14.jpg" alt="Türkiye İktisat Tarihi (1908-2015)">
+                <img src="kapaklar/14.jpg" alt="Türkiye İktisat Tarihi">
             </div>
             <div class="card-content">
                 <h3 class="book-title">Türkiye İktisat Tarihi</h3>
@@ -425,10 +439,10 @@
                     <li><strong>Yazar:</strong> Korkut Boratav</li>
                     <li><strong>Yıl / Sayfa:</strong> 1988 / ~400</li>
                     <li><strong>Orijinal Dil:</strong> Türkçe</li>
-                    <li><strong>Dil Zorluğu:</strong> İçinde iktisadi veriler olsa da metni çok duru ve nettir.</li>
+                    <li><strong>Dil Zorluğu:</strong> İktisadi veriler olsa da kalemi duru ve öğreticidir.</li>
                     <li><strong>Önerilen Baskı:</strong> İmge Kitabevi</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Türkiye'nin sermaye birikimini ve sınıf yapılarını katıksız bir Marksist iktisat penceresinden anlatan ana kaynaktır.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Türkiye'deki siyasi kavgaların arkasındaki sınıfsal yapıyı ve sermaye birikimini anlatan Marksist ana kaynaktır.</div>
             </div>
         </div>
 
@@ -443,10 +457,28 @@
                     <li><strong>Yazar:</strong> Behice Boran</li>
                     <li><strong>Yıl / Sayfa:</strong> 1968 / ~320</li>
                     <li><strong>Orijinal Dil:</strong> Türkçe</li>
-                    <li><strong>Dil Zorluğu:</strong> Sosyolog kalemiyle analitik, duygusallıktan uzak ve keskin bir dili vardır.</li>
+                    <li><strong>Dil Zorluğu:</strong> Sosyolojik, duygusallıktan uzak ve keskin bir dili vardır.</li>
                     <li><strong>Önerilen Baskı:</strong> Yordam Kitap</li>
                 </ul>
-                <div class="desc"><strong>Neden Burada?</strong> Türkiye'nin koşullarında bilimsel sosyalizmin nasıl örgütlenmesi gerektiğine dair yetkin metindir.</div>
+                <div class="desc"><strong>Neden Burada?</strong> Somut koşullarda parlamenter/parti odaklı sosyalist mücadelenin nasıl kurulması gerektiğine dair ortodoks hat.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/23.jpg" alt="Bütün Eserleri">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Seçme Yazılar / Bütün Eserleri</h3>
+                <span class="book-alt-title">Orijinal Dil: Türkçe</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> İbrahim Kaypakkaya</li>
+                    <li><strong>Yıl / Sayfa:</strong> 1971-73 / ~500</li>
+                    <li><strong>Orijinal Dil:</strong> Türkçe</li>
+                    <li><strong>Dil Zorluğu:</strong> Siyasi polemik dili taşır. Doğrudan ve keskindir.</li>
+                    <li><strong>Önerilen Baskı:</strong> Umut veya Nisan Yayıncılık</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Türkiye solundaki radikal teorik kopuştur. Kemalizm eleştirisi ve "köylü devrimi" (Maoizm) teziyle Boran'ın antitezidir.</div>
             </div>
         </div>
     </div>
@@ -464,8 +496,8 @@
                     <li><strong>Yazar:</strong> Antonio Gramsci</li>
                     <li><strong>Yıl / Sayfa:</strong> 1929-1935 / ~580</li>
                     <li><strong>Orijinal Dil:</strong> İtalyanca</li>
-                    <li><strong>Dil / Çeviri:</strong> Şifreli bir dille yazıldığı için okunması en zor metinlerden biridir. Dipnotlar hayatidir.</li>
-                    <li><strong>Önerilen Baskı:</strong> International Publishers (Q. Hoare çevirisi)</li>
+                    <li><strong>Dil / Çeviri:</strong> Şifreli bir dille yazıldığı için okunması zordur.</li>
+                    <li><strong>Önerilen Baskı:</strong> Belge Yayınları (Tr) / Int. Publishers (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin sadece orduyla değil, okullar ve medya ile rıza ("Hegemonya") ürettiğini açıklar.</div>
             </div>
@@ -482,8 +514,8 @@
                     <li><strong>Yazar:</strong> Wilhelm Reich</li>
                     <li><strong>Yıl / Sayfa:</strong> 1948 / ~120</li>
                     <li><strong>Orijinal Dil:</strong> Almanca</li>
-                    <li><strong>Dil / Çeviri:</strong> Bilimsel bir tez değil, iç dökmedir. İnanılmaz duygusal, akıcı ve sarsıcıdır.</li>
-                    <li><strong>Önerilen Baskı:</strong> FSG (İng) / Payel Yayınları (Tr)</li>
+                    <li><strong>Dil / Çeviri:</strong> İç dökmedir. İnanılmaz duygusal, akıcı ve sarsıcıdır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Payel Yayınları (Tr) / FSG (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sıradan insanın neden kendisini ezen otoriteye aşık olduğunu açıklar. Hegemonyanın psikolojik yüzüdür.</div>
             </div>
@@ -500,8 +532,8 @@
                     <li><strong>Yazar:</strong> David Harvey</li>
                     <li><strong>Yıl / Sayfa:</strong> 2005 / ~250</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
-                    <li><strong>Dil / Çeviri:</strong> Modern ve analitik bir İngilizcesi vardır. B2 seviyesi ile oldukça rahat okunur.</li>
-                    <li><strong>Önerilen Baskı:</strong> Oxford University Press</li>
+                    <li><strong>Dil / Çeviri:</strong> Analitik bir İngilizcesi vardır, rahattır.</li>
+                    <li><strong>Önerilen Baskı:</strong> Yordam Kitap (Tr) / Oxford (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin 1980'lerden itibaren devleti ve toplumu nasıl yeniden dizayn ettiğini anlatır.</div>
             </div>
@@ -512,16 +544,34 @@
                 <img src="kapaklar/19.jpg" alt="Capitalist Realism">
             </div>
             <div class="card-content">
-                <h3 class="book-title">Capitalist Realism: Is There No Alternative?</h3>
+                <h3 class="book-title">Capitalist Realism</h3>
                 <span class="book-alt-title">Türkçe Adı: Kapitalist Gerçekçilik</span>
                 <ul class="meta-list">
                     <li><strong>Yazar:</strong> Mark Fisher</li>
                     <li><strong>Yıl / Sayfa:</strong> 2009 / ~85</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
-                    <li><strong>Dil / Çeviri:</strong> Kültürel teori ve pop-kültür harmanlandığı için kendine has jargonu vardır. Dili yoğundur.</li>
-                    <li><strong>Önerilen Baskı:</strong> Zero Books / Repeater Books</li>
+                    <li><strong>Dil / Çeviri:</strong> Kendine has jargonu vardır, dili yoğundur.</li>
+                    <li><strong>Önerilen Baskı:</strong> Habitus (Tr) / Zero Books (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sistemin çöküşünü hayal etmenin kapitalizmin sonunu hayal etmekten neden daha kolay olduğunu sorgular.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-img-container">
+                <img src="kapaklar/24.jpg" alt="Ghosts of My Life">
+            </div>
+            <div class="card-content">
+                <h3 class="book-title">Ghosts of My Life</h3>
+                <span class="book-alt-title">Türkçe Adı: Hayatımın Hayaletleri</span>
+                <ul class="meta-list">
+                    <li><strong>Yazar:</strong> Mark Fisher</li>
+                    <li><strong>Yıl / Sayfa:</strong> 2014 / ~250</li>
+                    <li><strong>Orijinal Dil:</strong> İngilizce</li>
+                    <li><strong>Dil / Çeviri:</strong> Popüler kültür analizi ile felsefeyi harmanlar.</li>
+                    <li><strong>Önerilen Baskı:</strong> Otonom Yayıncılık (Tr) / Zero Books (İng)</li>
+                </ul>
+                <div class="desc"><strong>Neden Burada?</strong> Kapitalist gerçekçiliğin sanattaki tahribatını ve geçmişin hayaletlerine (Hauntoloji) nasıl sığındığımızı inceler.</div>
             </div>
         </div>
 
@@ -536,8 +586,8 @@
                     <li><strong>Yazar:</strong> Mark Fisher</li>
                     <li><strong>Yıl / Sayfa:</strong> 2020 / ~270</li>
                     <li><strong>Orijinal Dil:</strong> İngilizce</li>
-                    <li><strong>Dil / Çeviri:</strong> Üniversite ders ses kayıtları olduğu için inanılmaz rahat, günlük ve akıcıdır.</li>
-                    <li><strong>Önerilen Baskı:</strong> Repeater Books</li>
+                    <li><strong>Dil / Çeviri:</strong> Üniversite ders ses kayıtlarıdır, akıcıdır.</li>
+                    <li><strong>Önerilen Baskı:</strong> İthaki Yayınları (Tr) / Repeater (İng)</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Yeni bir sol tahayyülün ve post-kapitalist bir geleceğin nasıl inşa edilebileceğini arar.</div>
             </div>
@@ -556,17 +606,14 @@
     const themeText = document.getElementById('themeText');
     const body = document.body;
 
-    // Tarayıcı hafızasını (localStorage) kontrol et
     const currentTheme = localStorage.getItem('theme');
     
-    // Artık varsayılan karanlık olduğu için, sadece 'light' kaydedilmişse aydınlığa çeviriyoruz
     if (currentTheme === 'light') {
         body.classList.remove('dark-mode');
         themeIcon.textContent = '🌙';
         themeText.textContent = 'Karanlık Mod';
     }
 
-    // Butona tıklama olayı
     themeToggleBtn.addEventListener('click', () => {
         body.classList.toggle('dark-mode');
         
