@@ -109,13 +109,19 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 5px 15px var(--shadow-color);
-            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
             display: flex;
             flex-direction: column;
             border: 1px solid var(--border-color);
         }
+
+        .card.is-read {
+            opacity: 0.65;
+            filter: grayscale(40%);
+        }
         
         .card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px var(--shadow-color); }
+        .card.is-read:hover { opacity: 1; filter: grayscale(0%); }
         
         .card-img-container {
             width: 100%;
@@ -152,6 +158,27 @@
         
         .desc { font-size: 0.95em; color: var(--desc-text-color); border-top: 1px solid var(--border-color); padding-top: 15px; margin-top: auto; transition: color 0.3s ease, border-color 0.3s ease;}
         
+        .read-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .read-container label {
+            cursor: pointer;
+            font-size: 0.95em;
+            color: var(--text-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .read-container input[type="checkbox"] {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-red);
+        }
+
         .footer { text-align: center; padding: 30px; margin-top: 50px; background: var(--secondary-dark); color: #aaaaaa; transition: background-color 0.3s ease;}
     </style>
 </head>
@@ -185,6 +212,9 @@
                     <li><strong>ISBN:</strong> 9781258448127</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Marksist ekonomi politiğin dünyadaki en anlaşılır giriş kitabıdır. Kavramları okur için netleştirir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-1"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -203,6 +233,9 @@
                     <li><strong>ISBN:</strong> 9780873489775</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sosyalizmin iyi niyetli hayallerden çıkıp felsefi ve ekonomik bir bilime nasıl dönüştüğünü anlatır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-2"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -221,6 +254,9 @@
                     <li><strong>ISBN:</strong> 9781032533919</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Hegel'in karmaşık diyalektiğinin, Marx'ın devrimci toplumsal teorisine nasıl zemin hazırladığını anlatan köprü metindir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-3"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -239,6 +275,9 @@
                     <li><strong>ISBN:</strong> 9780140432084</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin ve işbölümünün temel metni. Marx'ın itiraz edeceği ekonomik sistemi kuran kısımdır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-4"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -257,6 +296,9 @@
                     <li><strong>ISBN:</strong> 9780140436150</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Devletin ekonomideki rolünü ve sömürgecilik eleştirisini ekler. Referans olarak kütüphanede bulunmalıdır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-5"> Okudum</label>
+                </div>
             </div>
         </div>
         
@@ -275,6 +317,9 @@
                     <li><strong>ISBN:</strong> 9780241532539</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin ilk aşamasında kadın emeğine nasıl el konulduğunu anlatarak yeniden üretim perspektifini tamamlar.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-6"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -293,6 +338,9 @@
                     <li><strong>ISBN:</strong> 9780717804702</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Marx'ın, sömürü kavramının ekonomik temelini Kapital okumadan anlatma biçimidir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-7"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -311,6 +359,9 @@
                     <li><strong>ISBN:</strong> 9780140445688</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalist üretim tarzının, artı-değer sömürüsünün ve sistemin içsel çelişkilerinin anatomisini çıkaran, ekonomi-politik zirvesidir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-8"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -329,6 +380,9 @@
                     <li><strong>ISBN:</strong> 9780140447422</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sömürü kavramının edebiyattaki en büyük karşılığı. Maden işçilerinin sefaletini ve direnişini hissettirir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-9"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -347,6 +401,9 @@
                     <li><strong>ISBN:</strong> 9781844678761</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sınıf mücadelesinin ve komünist hedeflerin siyasi deklarasyonu.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-10"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -365,6 +422,9 @@
                     <li><strong>ISBN:</strong> 9780745310350</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Serbest rekabetin dev tekellere dönüştüğünü gösterir. I. Dünya Savaşı'nın Marksist açıklamasıdır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-11"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -383,6 +443,9 @@
                     <li><strong>ISBN:</strong> 9780143039716</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Tekelci kapitalizmin siyasi olarak faşist bir oligarşiye dönüşmesini öngören distopik kurgudur.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-12"> Okudum</label>
+                </div>
             </div>
         </div>
     </div>
@@ -404,6 +467,9 @@
                     <li><strong>ISBN:</strong> 9781931859363</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin reformlarla düzeltilebileceğini savunanlara yazılmış sarsıcı bir reddiyedir. İşçi sınıfının kendiliğinden eylemini savunur.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-13"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -422,6 +488,9 @@
                     <li><strong>ISBN:</strong> 9781419183478</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Burjuva devletin neden parçalanıp yerine ne konması gerektiğini ve devletin sönümlenmesini tartışır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-14"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -440,6 +509,9 @@
                     <li><strong>ISBN:</strong> 9781844675876</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Marksizm-Leninizm'in Batı'dan çıkıp köylü toplumuna nasıl uyarlandığını gösteren felsefi temeldir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-15"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -458,6 +530,9 @@
                     <li><strong>ISBN:</strong> 9780802141323</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sömürgeciliğe karşı şiddetin neden zorunlu ve özgürleştirici olduğunu anlatır. Üçüncü Dünya devrim teorisinin zirvesidir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-16"> Okudum</label>
+                </div>
             </div>
         </div>
     </div>
@@ -479,6 +554,9 @@
                     <li><strong>ISBN:</strong> 9789944989299</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Türkiye solunun sokağa indiği, kitleselleştiği ve teorik tartışmalarını yaşadığı dönemi kapsar.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-17"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -497,6 +575,9 @@
                     <li><strong>ISBN:</strong> 9789755333939</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Türkiye'deki siyasi kavgaların arkasındaki sınıfsal yapıyı ve sermaye birikimini anlatan Marksist ana kaynaktır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-18"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -515,6 +596,9 @@
                     <li><strong>ISBN:</strong> 9786051721637</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Somut koşullarda parlamenter/parti odaklı sosyalist mücadelenin nasıl kurulması gerektiğine dair ortodoks hat.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-19"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -533,6 +617,9 @@
                     <li><strong>ISBN:</strong> 9786056668029</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Türkiye solundaki radikal teorik kopuştur. Kemalizm eleştirisi ve köylü devrimi teziyle Boran'ın antitezidir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-20"> Okudum</label>
+                </div>
             </div>
         </div>
     </div>
@@ -554,6 +641,9 @@
                     <li><strong>ISBN:</strong> 9780717803972</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin sadece orduyla değil, okullar ve medya ile rıza ürettiğini açıklar.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-21"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -572,6 +662,9 @@
                     <li><strong>ISBN:</strong> 9780374504014</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sıradan insanın neden kendisini ezen otoriteye aşık olduğunu açıklar. Hegemonyanın psikolojik yüzüdür.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-22"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -590,6 +683,9 @@
                     <li><strong>ISBN:</strong> 9780199283279</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin 1980'lerden itibaren devleti ve toplumu nasıl yeniden dizayn ettiğini anlatır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-23"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -608,6 +704,9 @@
                     <li><strong>ISBN:</strong> 9780946061129</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalizmin medyayı ve tüketimi nasıl bir illüzyona çevirdiğini, yabancılaşmanın görselleşmiş halini deşifre eder.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-24"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -626,6 +725,9 @@
                     <li><strong>ISBN:</strong> 9780804795098</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> 21. yüzyılda patrona gerek kalmadan sosyal medya ve başarı hırsıyla kendi kendimizi nasıl sömürdüğümüzü inceler.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-25"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -644,6 +746,9 @@
                     <li><strong>ISBN:</strong> 9781846943171</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Sistemin çöküşünü hayal etmenin kapitalizmin sonunu hayal etmekten neden daha kolay olduğunu sorgular.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-26"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -662,6 +767,9 @@
                     <li><strong>ISBN:</strong> 9781780992266</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Kapitalist gerçekçiliğin sanattaki tahribatını ve geçmişin hayaletlerine nasıl sığındığımızı inceler.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-27"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -680,6 +788,9 @@
                     <li><strong>ISBN:</strong> 9781913462482</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Yeni bir sol tahayyülün ve post-kapitalist bir geleceğin nasıl inşa edilebileceğini arar.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-28"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -702,6 +813,9 @@
                     <li><strong>ISBN:</strong> 9781590174517</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Rus devrimini dışarıdan değil, bizzat içinden okumak için efsanevi bir anı kitabıdır. Teorik ilk büyük zaferini ve trajedisini gösterir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-29"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -720,6 +834,9 @@
                     <li><strong>ISBN:</strong> 9780802135582</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Devrimin Üçüncü Dünya'ya sıçrayışıdır. Mao ve Fanon'un anlattığı kır gerillası ve anti-emperyalist şiddet teorisinin ete kemiğe bürünmüş destansı halidir.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-30"> Okudum</label>
+                </div>
             </div>
         </div>
 
@@ -738,6 +855,9 @@
                     <li><strong>ISBN:</strong> 9789755100869</li>
                 </ul>
                 <div class="desc"><strong>Neden Burada?</strong> Dünyadaki isyan ateşinin Türkiye'ye sıçramasıdır. Siyasi tarihini okuduğun o gençlerin (Deniz Gezmiş ve yoldaşları), ipe giderkenki adanmışlıklarını anlatır.</div>
+                <div class="read-container">
+                    <label><input type="checkbox" class="read-checkbox" data-id="book-31"> Okudum</label>
+                </div>
             </div>
         </div>
     </div>
@@ -773,6 +893,28 @@
             themeIcon.textContent = '🌙';
             themeText.textContent = 'Karanlık Mod';
         }
+    });
+
+    const readCheckboxes = document.querySelectorAll('.read-checkbox');
+    
+    readCheckboxes.forEach(box => {
+        const bookId = box.getAttribute('data-id');
+        
+        if (localStorage.getItem(bookId) === 'true') {
+            box.checked = true;
+            box.closest('.card').classList.add('is-read');
+        }
+
+        box.addEventListener('change', (e) => {
+            const isChecked = e.target.checked;
+            localStorage.setItem(bookId, isChecked);
+            
+            if (isChecked) {
+                e.target.closest('.card').classList.add('is-read');
+            } else {
+                e.target.closest('.card').classList.remove('is-read');
+            }
+        });
     });
 </script>
 
